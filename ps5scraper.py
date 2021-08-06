@@ -38,7 +38,11 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('avillalobos.code', 'spixixurrrryqwky')
+    server.login(
+ #      'username'
+        ,
+ #      'Password Here'
+                )
 
     subject = 'PS5 in Stock at Walmart!'
     body = 'Check the walmart link https://www.walmart.com/ip/Sony-PlayStation-5-Video-Game-Console/994712501'
@@ -46,8 +50,8 @@ def send_mail():
     msg = f"Subject: {subject}\n\n{body}"
 
     server.sendmail(
-        'avillalobos.code@gmail.com',
-        'angel_villalobos5@yahoo.com',
+#        'email from here',
+#        'email send to here',
         msg
 
     )
