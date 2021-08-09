@@ -60,6 +60,7 @@ def send_mail():
     server.quit()
 
 check_stock()
-#while True:
-#    check_stock()
-#    time.sleep(60 * 60 * 12)
+while True:
+    check_stock()
+    #should check every hour
+    time.sleep(60 * 60)
