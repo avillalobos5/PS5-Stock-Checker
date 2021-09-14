@@ -2,8 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 import time
-
-URL = 'https://www.walmart.com/ip/Sony-PlayStation-5-Video-Game-Console/363472942'
+# check website to make sure it is active since it changes
+ps5_Site = 'https://www.walmart.com/ip/Sony-PlayStation-5-Video-Game-Console/363472942'
+URL = ps5_Site
 
 headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36,'}
 headers = {"User-Agent": 'Mozilla/5.0 (X11; Linux x86_64)', 'Cache-Control': 'no-cache', "Pragma": "no-cache"}
@@ -43,10 +44,14 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('avillalobos.code', 'spixixurrrryqwky')
+    server.login(
+   #     'username here'
+        , 
+   #     'password here'
+    )
 
     subject = 'PS5 in Stock at Walmart!'
-    body = 'Check the walmart link https://www.walmart.com/ip/Sony-PlayStation-5-Video-Game-Console/994712501'
+    body = 'Check the walmart link ' + str(ps5_Site)
 
     msg = f"Subject: {subject}\n\n{body}"
 
