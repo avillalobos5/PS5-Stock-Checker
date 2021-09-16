@@ -16,7 +16,8 @@ def check_stock():
     soup = BeautifulSoup(page.content, 'html.parser')
 
 
-    title = soup.find("h1", class_="prod-ProductTitle").get_text()
+    title = soup.find("span", itemprop="name").get_text()
+    price = soup.find("span", itemprop="price").get_text()
     try:
         stock = soup.find(id="blitzitem-container").get_text()
         converted_stock_string = stock
@@ -31,6 +32,7 @@ def check_stock():
 #   print(converted_stock_string)
 #   print(converted_stock)
     print(title)
+    print(price)
     
 
   #  print (soup)
