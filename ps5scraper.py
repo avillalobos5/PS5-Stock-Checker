@@ -17,7 +17,7 @@ def check_stock():
     soup = BeautifulSoup(page.content, 'html.parser')
 
     global price
-    title = soup.find("span", itemprop="name").get_text()
+    title = soup.find("h1", itemprop="name").get_text()
     price = soup.find("span", itemprop="price").get_text()
     try:
         stock = soup.find(id="blitzitem-container").get_text()
